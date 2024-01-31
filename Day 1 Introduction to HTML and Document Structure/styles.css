@@ -1,0 +1,73 @@
+/* CSS file */
+
+/* Basic CSS syntax and structure */
+body {
+  font-family: Arial, sans-serif;
+  font-family: "Roboto";
+}
+
+/* Using color values in CSS */
+h1 {
+  color: #333;
+}
+
+/* Types of selectors and their usage */
+#about-me {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Formatting text with CSS properties */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Understanding the box model */
+header,
+footer {
+  padding: 20px;
+  margin: 10px;
+}
+
+/* Using absolute units and relative units for responsive design */
+section {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* The display property for element layout */
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Position values: static, relative, absolute, fixed, and sticky */
+footer {
+  position: sticky;
+  bottom: 0;
+}
+
+/* Adjusting background size for images */
+body {
+  background-size: cover;
+}
+
+/* Introduction to Flexbox for flexible layout design */
+header,
+footer {
+  display: flex;
+  align-items: center;
+}
+
+/* Adding basic animations to elements */
+h1:hover {
+  color: red;
+  /* Using CSS transitions for smooth effects */
+  transition: color 0.3s ease;
+  transform: scale(1.1);
+  cursor: pointer;
+}

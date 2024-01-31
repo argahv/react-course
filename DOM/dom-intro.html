@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <h1 id="demo">Hello, DOM!</h1>
+
+    <!-- DOM Input -->
+    <button onclick="changeText()">Change Text</button>
+
+    <input type="text" id="userInput" placeholder="Input" />
+    <button onclick="displayInput()">Display Input</button>
+
+    <img
+      src="image.avif"
+      onmouseover="changeImage('./hover-image.jpg')"
+      onmouseout="changeImage('./image.avif')"
+      alt="Image"
+      width="200px"
+    />
+
+    <input type="radio" name="gender" value="male" placeholder="Gender" /> Male
+    <input type="radio" name="gender" value="female" placeholder="Gender" />
+    Female
+
+    <select id="country" title="Select Country">
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="canada">Canada</option>
+    </select>
+
+    <button onclick="showChoices()">Show Choices</button>
+
+    <script>
+      function showChoices() {
+        let gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        let country = document.getElementById("country").value;
+        alert("Gender: " + gender + "\nCountry: " + country);
+      }
+
+      function changeImage(newSrc) {
+        document.getElementsByTagName("img")[0].src = newSrc;
+      }
+
+      function displayInput() {
+        let userInput = document.getElementById("userInput").value;
+        console.log("userInput", userInput);
+        // alert("User Input: " + userInput);
+      }
+
+      function changeText() {
+        document.getElementById("demo").innerHTML = "Text Changed!";
+      }
+
+      function showChoices() {
+        let gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        let country = document.getElementById("country").value;
+        alert("Gender: " + gender + "\nCountry: " + country);
+      }
+    </script>
+  </body>
+</html>
