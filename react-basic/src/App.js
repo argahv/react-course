@@ -1,48 +1,94 @@
 import { useState } from "react";
 
 const App = () => {
-  const [num, setNumber] = useState(5);
   const [students, setStudents] = useState([
     { name: "John", age: 20 },
     { name: "Doe", age: 25 },
   ]);
+  const [student, setStudent] = useState({
+    name: "",
+    age: "",
+  });
+  // const [name, setName] = useState("");
+  // const [age, setAge] = useState("");
 
-  const increaseNumber = () => {
-    setNumber(num + 1);
+  // const onNameChange = (event) => {
+  //   console.log("name", event.target.name);
+  //   const { value } = event.target;
+  //   // setStudent({
+  //   //   name: value,
+  //   // });
+  //   setStudent((prev) => ({
+  //     ...prev,
+  //     name: value,
+  //   }));
+
+  //   // setName(value);
+  // };
+
+  const handleInput = (e) => {
+    const { value, name } = e.target;
+
+    setStudent((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const renderStudents = () =>
-    students.map((student, i) => {
-      return (
-        <div key={student.name}>
-          <p>
-            Name:<span>{student.name}</span>, Age:<span>{student.age}</span>
-          </p>
-        </div>
-      );
-    });
+  console.log("students", students);
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+
+    setStudents((prev) => [...prev, student]);
+  };
 
   return (
     <>
-      <h1>{num}</h1>
-      <div>
-        <button onClick={increaseNumber}>
-          {/* onClick={() => {
-            setNumber(num + 1);
-          }}> */}
-          Increase
-        </button>
-      </div>
+      {/* {students.map((student, i) => {
+        return (
+          <div key={student.name}>
+            <p>
+              Name:<span>{student.name}</span>, Age:<span>{student.age}</span>
+            </p>
+          </div>
+        );
+      })} */}
 
-      <div>{[<li>Item1</li>, <li>Item2</li>]}</div>
-      <div>{renderStudents()}</div>
-      {/* <div>
-        {students.map((student, i) => {
-          return <li key={i}>{student.name}</li>;
-        })}
-      </div> */}
+      <Students students={students} testProps={"Test"} />
+
+      <div>
+        <form onSubmit={handleAdd}>
+          <input
+            type='text'
+            placeholder='Name'
+            onChange={handleInput}
+            // onChange={onNameChange}
+            name='name'
+          />
+          <input
+            type='number'
+            placeholder='Age'
+            onChange={handleInput}
+            // onChange={onAgeChange}
+            name='age'
+          />
+          <button type='submit'>Add</button>
+        </form>
+      </div>
     </>
   );
 };
 
+const Students = ({ students }) => {
+  return students.map((student, i) => {
+    return (
+      <div key={student.name}>
+        <p>
+          Name:<span>{student.name}</span>, Age:<span>{student.age}</span>
+        </p>
+      </div>
+    );
+  });
+};
 export default App;
