@@ -56,6 +56,7 @@ const App = () => {
       })} */}
 
       <Students students={students} testProps={"Test"} />
+      {/* <AddStudent student={student} handleAdd={handleAdd} /> */}
 
       <div>
         <form onSubmit={handleAdd}>
