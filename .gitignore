@@ -1,3 +1,4 @@
 ignored-folder/
 ignored-file.js
 node_modules/
+.env
