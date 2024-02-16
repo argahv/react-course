@@ -8,7 +8,7 @@ export default function privateRoutes() {
   return {
     element: <Layout />,
     children: [
-      { path: "/", element: <Dashboard /> },
+      { path: "/dashboard", element: <Dashboard /> },
       { path: "*", element: <Navigate to="/" replace /> },
     ],
   };
