@@ -15,3 +15,8 @@ State Management
 Context -- https://react.dev/reference/react/createContext
 Redux - https://redux.js.org/
 Zustand - https://github.com/pmndrs/zustand
+
+
+
+Iconfify
+https://icon-sets.iconify.design/
