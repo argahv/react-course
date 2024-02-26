@@ -10,5 +10,12 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(cartApi.middleware, productsApi.middleware),
+
+  // middleware: (getDefaultMiddleware) =>
+  // getDefaultMiddleware().concat(cartApi.middleware, productsApi.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
+
+
+
+/// request ======(middlerware)=====> server

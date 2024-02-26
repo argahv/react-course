@@ -1,6 +1,5 @@
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
 import { useGetProductsQuery } from "../services/productsApi";
 
 const Product = ({ product }) => {
@@ -44,9 +43,13 @@ const Product = ({ product }) => {
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
+  // const [deleteProduct] = useDeleteProductMutation()
+  console.log("data", data);
+  // const products = useSelector((state) => state);
 
-  const products = useSelector((state) => state);
-  console.log("products", products);
+  if (isLoading) {
+    return <h1>Loading</h1>;
+  }
   return (
     <>
       <Grid container spacing={2}>
